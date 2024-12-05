@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const bodyParser = require("body-parser");
 
@@ -10,8 +11,8 @@ app.use(bodyParser.json());
 
 app.use("/api/user", userRoutes);
 
-app.listen(3001, () => {
-    console.log("App is listening at port 3001");
+app.listen(process.env.PORT, () => {
+    console.log(`App is listening at port ${process.env.PORT}`);
     
 });
 
